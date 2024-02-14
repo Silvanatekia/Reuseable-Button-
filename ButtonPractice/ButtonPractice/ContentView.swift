@@ -10,49 +10,23 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Button("Primary") {
-                print("press me ")
-                
-            }
-            .font(.title)
-            .padding(.all, 14)
-            .background(Color("cbsBlue"))
-            .foregroundColor(.white)
-            .cornerRadius(25)
             
-            Button("Primary") {
-                print("pressed")
-                
+            ButtonView(title: "Primary", isPaddingLengthRequired: true, isCustomBackgroundColor: true) {
+                print("primary button 1 pressed")
             }
-            .font(.title)
-            .padding(.all, 14)
-            .foregroundColor(.white)
-            .background(Color.blue)
-            .cornerRadius(25)
             
-            Button("Secondary") {
-                print("pressed")
+            ButtonView(title: "Primary", isPaddingLengthRequired: true, isCustomBackgroundColor: false, backgroundColor: .blue) {
+                print("primary button 2 pressed")
             }
-            .padding(.all)
-            .foregroundColor(.white)
-            .background(Color.black)
-            .cornerRadius(25)
-            .overlay(
-                Capsule(style: .continuous)
-                    .stroke(Color.blue, lineWidth: 2))
             
             
-            Button("Secondary") {
-                print("Pressed")
+            BorderButtonView(title: "Secondary", font: .title2) {
+                print("secondary button 1 pressed")
             }
-            .padding(.all)
-            .foregroundColor(.black)
-            .background(Color.white)
-            //.border(Color.blue, width: 3)
-            .cornerRadius(4)
-            .overlay(
-                RoundedRectangle(cornerRadius: 25)
-                    .stroke(Color.blue, lineWidth: 3))
+            
+            BorderButtonView(title: "Secondary", font: .title2, backgroundColor: .white, foregroundColor: .black, strokeLineWidth: 3) {
+                print("secondary button 2 pressed")
+            }
         }
     }
 }
