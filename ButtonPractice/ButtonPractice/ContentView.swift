@@ -24,7 +24,7 @@ struct ContentView: View {
                 print("secondary button 1 pressed")
             }
             
-            BorderButtonView(title: "Secondary", font: .title2, backgroundColor: .white, foregroundColor: .black, strokeLineWidth: 2) {
+            BorderButtonView(title: "Secondary", font: .title2, backgroundColor: .white, foregroundColor: .black, strokeLineWidth: 3) {
                 print("secondary button 2 pressed")
             }
         }
